@@ -5,37 +5,49 @@ import java.util.Scanner;
 public class Stars {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		System.out.println("¬‚Â‰ËÚÂ  ‚˚ÒÓÚÛ,¯ËËÌÛ ‡ÏÍË. ¬‚Â‰ËÚÂ ÒÎÓ‚Ó.");
-		Scanner scan = new Scanner(System.in);
-		int height = scan.nextInt();
-		int width = scan.nextInt();
-		String a = scan.nextLine();
-		int len = a.length();
+		System.out.println("–í–≤–µ–¥–∏—Ç–µ –≤—ã—Å–æ—Ç—É –∏ —à–∏—Ä–∏–Ω—É —Ä–∞–º–∫–∏. –í–≤–µ–¥–∏—Ç–µ —Å–ª–æ–≤–æ.");
+		try (Scanner scan = new Scanner(System.in)) {
+			int height = scan.nextInt();
+			int width = scan.nextInt();
+			String a = scan.next();
+			int len = a.length();
+			char[] result = a.toCharArray();
+			int s = (width - len) / 2;
+			int h = (height - 2) / 2;
+			System.out.println(result.length);
 
-		if (len > width) {
-			System.out.print("Œ¯Ë·Í‡");
+			if (len > width) {
+				System.out.print("–û—à–∏–±–∫–∞");
 
-		}else {
-			
-			for (int i = 0; i < height; i++) {
-				for (int j = 0; j < width; j++) {
-					if (i != 0 & i != height - 1 & j != 0 & j != width - 1) {
-						System.out.print(' ');
+			} else {
 
-					} else {
-						System.out.print('*');
+				for (int i = 0; i < height; i++) {
+
+					for (int k = 0; k < width; k++) {
+
+						if (k == 0 || k == width - 1 || i == 0 || i == height - 1) {
+							System.out.print('*');
+
+						} else if (k == s && i == h) {
+
+							for (int p = 0; p < result.length; p++) {
+								System.out.print(result[]);
+								k++;
+							}
+							k--;
+						}
+
+						else {
+							System.out.print(" ");
+
+						}
 					}
-				}
-				System.out.println();
-			}
-			
-		}
-	
-	
-	}
-	
-	
 
+					System.out.println();
+				}
+
+			}
+		}
+	}
 }
