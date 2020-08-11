@@ -4,50 +4,49 @@ import java.util.Scanner;
 
 public class Stars {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		System.out.println("Введите высоту и ширину рамки. Введите слово.");
-		try (Scanner scan = new Scanner(System.in)) {
-			int height = scan.nextInt();
-			int width = scan.nextInt();
-			String a = scan.next();
-			int len = a.length();
-			char[] result = a.toCharArray();
-			int s = (width - len) / 2;
-			int h = (height - 2) / 2;
-			System.out.println(result.length);
+        System.out.println("Введите высоту и ширину рамки. Введите слово.");
+        Scanner scan = new Scanner(System.in);
+            int height = scan.nextInt();
+            int width = scan.nextInt();
+            String a = scan.next();
+            int len = a.length();
+            char[] result = a.toCharArray();
+            int s = (width - len) / 2;
+            int h = (height - 2) / 2;
+            System.out.println(result.length);
 
-			if (len > width) {
-				System.out.print("Ошибка");
+            if (len > width) {
+                System.out.print("Ошибка");
 
-			} else {
+            } else {
 
-				for (int i = 0; i < height; i++) {
+                for (int i = 0; i < height; i++) {
 
-					for (int k = 0; k < width; k++) {
+                    for (int k = 0; k < width; k++) {
 
-						if (k == 0 || k == width - 1 || i == 0 || i == height - 1) {
-							System.out.print('*');
+                        if (k == 0 || k == width - 1 || i == 0 || i == height - 1) {
+                            System.out.print('*');
 
-						} else if (k == s && i == h) {
+                        } else if (k == s && i == h) {
 
-							for (int p = 0; p < result.length; p++) {
-								System.out.print(result[]);
-								k++;
-							}
-							k--;
-						}
+                            for (int p = 0; p < result.length; p++) {
+                                System.out.print(result[p]);
+                                k++;
+                            }
+                            k--;
+                        }
 
-						else {
-							System.out.print(" ");
+                        else {
+                            System.out.print(" ");
 
-						}
-					}
+                        }
+                    }
 
-					System.out.println();
-				}
+                    System.out.println();
+                }
 
-			}
-		}
-	}
-}
+            }
+        }
+    }
