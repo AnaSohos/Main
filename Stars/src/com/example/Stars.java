@@ -17,7 +17,7 @@ public class Stars {
         int h = (height - 2) / 2;
         
 
-        if (len > width) {
+        if (len + 2 > width) {
             System.out.print("Ошибка");
 
         } else {
