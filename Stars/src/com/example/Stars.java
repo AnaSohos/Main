@@ -15,7 +15,7 @@ public class Stars {
         char[] result = a.toCharArray();
         int s = (width - len) / 2;
         int h = (height - 2) / 2;
-        System.out.println(result.length);
+        
 
         if (len > width) {
             System.out.print("Ошибка");
