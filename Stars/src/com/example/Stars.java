@@ -12,12 +12,12 @@ public class Stars {
         int width = scan.nextInt();
         String a = scan.next();
         int len = a.length();
-        char[] result = a.toCharArray();
+        //char[] result = a.toCharArray();
         int s = (width - len) / 2;
-        int h = (height - 2) / 2;
-        
+        int h = height / 2;
 
-        if (len + 2 > width) {
+
+        if (len + 2 > width || height < 3) {
             System.out.print("Ошибка");
 
         } else {
@@ -31,8 +31,8 @@ public class Stars {
 
                     } else if (k == s && i == h) {
 
-                        for (int p = 0; p < result.length; p++) {
-                            System.out.print(result[p]);
+                        for (int p = 0; p < a.length(); p++) {
+                            System.out.print(a.charAt(p));
                             k++;
                         }
                         k--;

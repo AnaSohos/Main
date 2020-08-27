@@ -1,58 +1,49 @@
 package com.example;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculatorZero {
 
-	public static void main(String[] args) {
-		int c, d, f, g, pr;
-		double gh;
+    public static void main(String[] args) {
+        int result = 0, rest, quotient;
+        double quotie;
 
-		System.out.println("Введите операцию (+ - * / ^) и два целый числа");
-		Scanner scan = new Scanner(System.in);
-		char oper = scan.next().charAt(0);
-		int a = scan.nextInt();
-		int b = scan.nextInt();
+        System.out.println("Введите операцию (+ - * / ^) и два целый числа");
+        Scanner scan = new Scanner(System.in);
+        char oper = scan.next().charAt(0);
+        int num1 = scan.nextInt();
+        int num2 = scan.nextInt();
 
-		if (a < 0 || b < 0) {
-			System.out.println("Число меньше нуля. Попробуйте еще раз");
-		}
+        if (oper == '+') {
+            result = num1 + num2;
+            System.out.println(" Сумма чисел = " + result);
 
-		else {
+        } else if (oper == '-') {
+            result = num1 - num2;
+            System.out.println("Разность чисел = " + result);
+        } else if (oper == '*') {
+            result = num1 * num2;
+            System.out.println("Произведение чисел = " + result);
+        } else if (oper == '^') {
+            int step = 1;
+            for (int i = 1; i <= num2; i++) {
+                step = step * num1;
+            }
 
-			if (oper == '+') {
-				c = a + b;
-				System.out.println(" Сумма чисел = " + c);
-			} 
-			else if (oper == '-') {
-				d = a - b;
-				System.out.println("Разность чисел = " + d);
-			} 
-			else if (oper == '*') {
-				f = a * b;
-				System.out.println("Произведение чисел = " + f);
-			} 
-			else if (oper == '^') {
-				int step = 1;
-				for (int i = 1; i <= b; i++) {
-					step = step * a;
-				}
-				System.out.println("Возведение в степень  = " + step);
-			} 
-			else if (oper == '/' && b != 0) {
-				g = a / b;
-				gh = (double) a / b;
-				pr = a % b;
-				System.out.println(" Дробное = " + gh + " Частное чисел = " + g + "Остаток от деления = " + pr);
+            if (step < 0) {
+                step *= -1;
+            }
+            System.out.println("Возведение в степень  = " + step);
+        } else if (oper == '/' && num2 != 0) {
+            quotient = num1 / num2;
+            quotie = (double) num1 / num2;
+            rest = num1 % num2;
+            System.out
+                .println(" Дробное = " + quotie + " Частное чисел = " + quotient + " Остаток от деления = " + rest);
 
-			} 
-			else {
-				System.out.println("Ошибка!! Попробуйте еще раз!");
-			}
+        } else {
+            System.out.println("Ошибка!! Попробуйте еще раз!");
+        }
 
-		}
-
-	}
-
+    }
 }
