@@ -12,7 +12,6 @@ public class Stars {
         int width = scan.nextInt();
         String a = scan.next();
         int len = a.length();
-        //char[] result = a.toCharArray();
         int s = (width - len) / 2;
         int h = height / 2;
 
