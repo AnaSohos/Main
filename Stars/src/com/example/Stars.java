@@ -47,9 +47,4 @@ public class Stars {
 
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> f4551f23c9922efb5751eb092d7f9468e5d53d96
