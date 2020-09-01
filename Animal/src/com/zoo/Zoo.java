@@ -1,6 +1,5 @@
 package com.zoo;
 
-import com.zoo.animal.Animal;
 import com.zoo.animal.Cats;
 import com.zoo.animal.Dogs;
 import com.zoo.animal.Foxs;
@@ -10,57 +9,84 @@ import com.zoo.animal.Raccoons;
 import com.zoo.animal.Wolfs;
 
 public class Zoo {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Animal cat = new Cats();
-		cat.say();
-		cat.getName();
-		System.out.print("Мое имя: ");
-		cat.setName("Барсик");
-		System.out.println(cat.getName());
+        Cats cat = new Cats();
+        cat.setName("РњСѓСЂР·");
+        System.out.print("РњРѕРµ РёРјСЏ: ");
+        System.out.println(cat.getName());
+        cat.say();
+        cat.play();
+        cat.contrive();
+        cat.stretching();
+        cat.sharpenClaws();
+        System.out.println();
 
-		Animal dog = new Dogs();
-		dog.say();
-		dog.getName();
-		System.out.print("Мое имя: ");
-		dog.setName("Рональд");
-		System.out.println(dog.getName());
+        Dogs dog = new Dogs();
+        dog.setName("РђРЅРґРµСЂСЃРѕРЅ");
+        System.out.print("РњРѕРµ РёРјСЏ: ");
+        System.out.println(dog.getName());
+        dog.say();
+        dog.play();
+        dog.contrive();
+        dog.bathe();
+        dog.gnawSlippers();
+        System.out.println();
 
-		Animal fox = new Foxs();
-		fox.say();
-		fox.getName();
-		System.out.print("Мое имя: ");
-		fox.setName("Рыжий");
-		System.out.println(fox.getName());
+        Foxs fox = new Foxs();
+        fox.setName("Р С‹Р¶РёР№");
+        System.out.print("РњРѕРµ РёРјСЏ: ");
+        System.out.println(fox.getName());
+        fox.say();
+        fox.play();
+        fox.contrive();
+        fox.hunts();
+        fox.protectTerritory();
+        System.out.println();
 
-		Animal panther = new Panthers();
-		panther.say();
-		panther.getName();
-		System.out.print("Мое имя: ");
-		panther.setName("Багира");
-		System.out.println(panther.getName());
+        Panthers panther = new Panthers();
+        System.out.print("РњРѕРµ РёРјСЏ: ");
+        panther.setName("РЁРµСЂС…Р°РЅ");
+        System.out.println(panther.getName());
+        panther.say();
+        panther.play();
+        panther.contrive();
+        panther.walkAtNight();
+        panther.markBoundaries();
+        System.out.println();
 
-		Animal rabit = new Rabbits();
-		rabit.say();
-		rabit.getName();
-		System.out.print("Мое имя: ");
-		rabit.setName("Пипкин");
-		System.out.println(rabit.getName());
+        Rabbits rabit = new Rabbits();
+        System.out.print("РњРѕРµ РёРјСЏ: ");
+        rabit.setName("Р РѕРЅР°Р»СЊРґ");
+        System.out.println(rabit.getName());
+        rabit.say();
+        rabit.play();
+        rabit.contrive();
+        rabit.jump();
+        rabit.eatGreens();
+        System.out.println();
 
-		Animal raccon = new Raccoons();
-		raccon.say();
-		raccon.getName();
-		System.out.print("Мое имя: ");
-		raccon.setName("Глэдис");
-		System.out.println(raccon.getName());
+        Raccoons raccon = new Raccoons();
+        System.out.print("РњРѕРµ РёРјСЏ: ");
+        raccon.setName("Р“Р°СЂРёРє");
+        System.out.println(raccon.getName());
+        raccon.say();
+        raccon.play();
+        raccon.rinse();
+        raccon.contrive();
+        raccon.steal();
+        System.out.println();
 
-		Animal wolf = new Wolfs();
-		wolf.say();
-		wolf.getName();
-		System.out.print("Мое имя: ");
-		wolf.setName("Шон ");
-		System.out.println(wolf.getName());
-
-	}
+        Wolfs wolf = new Wolfs();
+        System.out.println("РњРѕРµ РёРјСЏ: ");
+        wolf.setName("Р”РѕРјРёРЅРёРє");
+        System.out.print(wolf.getName());
+        wolf.say();
+        wolf.play();
+        wolf.contrive();
+        wolf.gatherInFlock();
+        wolf.howl();
+        System.out.println();
+    }
 
 }
