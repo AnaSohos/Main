@@ -39,7 +39,7 @@ public class CalculatorZero {
             quotie = (double) num1 / num2;
             rest = num1 % num2;
             System.out
-                .println(" Дробное = " + quotie + " Частное чисел = " + quotient + " Остаток от деления = " + rest);
+                    .println(" Дробное = " + quotie + " Частное чисел = " + quotient + " Остаток от деления = " + rest);
 
         } else {
             System.out.println("Ошибка!! Попробуйте еще раз!");
