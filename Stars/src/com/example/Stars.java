@@ -12,8 +12,9 @@ public class Stars {
         int width = scan.nextInt();
         String a = scan.next();
         int len = a.length();
-        int s = (width - len) / 2;
-        int h = height / 2;
+        //char[] result = a.toCharArray();
+        int midl = (width - len) / 2;
+        int midl2 = height / 2;
 
 
         if (len + 2 > width || height < 3) {
@@ -28,7 +29,7 @@ public class Stars {
                     if (k == 0 || k == width - 1 || i == 0 || i == height - 1) {
                         System.out.print('*');
 
-                    } else if (k == s && i == h) {
+                    } else if (k == midl && i == midl2) {
 
                         for (int p = 0; p < a.length(); p++) {
                             System.out.print(a.charAt(p));
