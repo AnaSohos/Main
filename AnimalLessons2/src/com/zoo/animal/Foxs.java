@@ -4,15 +4,15 @@ public class Foxs extends Animal {
 
 
     public Foxs() {
-
-    }
-    public Foxs(String name, int age, String kind, String color, boolean successfulPredator) {
         super();
+    }
+    public Foxs(String name, int age, String color, String kind, String character) {
+
         this.name = name;
         this.age = age;
-        this.kind = kind;
         this.color = color;
-        this.successfulPredator = successfulPredator;
+        this.kind = kind;
+        this.character = character;
     }
 
 

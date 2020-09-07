@@ -3,15 +3,15 @@ package com.zoo.animal;
 public class Raccoons extends Animal {
 
     public Raccoons() {
-
-    }
-    public Raccoons(String name, int age, String character, String color, boolean successfulPredator) {
         super();
+    }
+    public Raccoons(String name, int age, String color, String kind, String character) {
+
         this.name = name;
         this.age = age;
-        this.character = character;
         this.color = color;
-        this.successfulPredator = successfulPredator;
+        this.kind = kind;
+        this.character = character;
 
     }
 

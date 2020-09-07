@@ -1,17 +1,30 @@
 package com.zoo.animal;
 
 public class Dogs extends Animal {
-    public Dogs() {
 
-    }
-    public Dogs(String name, int age, String breed, String color, boolean isTrained) {
+    protected boolean isTrained;
+
+
+    public Dogs() {
         super();
+    }
+    public Dogs(String name, int age, String color, String kind, String character, boolean isTrained) {
+
         this.name = name;
         this.age = age;
         this.color = color;
-        this.breed = breed;
+        this.kind = kind;
+        this.character = character;
         this.isTrained = isTrained;
     }
+
+    public boolean isTrained() {
+        return isTrained;
+    }
+    public void setTrained(boolean isTrained) {
+        this.isTrained = isTrained;
+    }
+
 
     public void say() {
         System.out.println("Гав-гав!");

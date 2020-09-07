@@ -2,15 +2,24 @@ package com.zoo.animal;
 
 public class Panthers extends Animal {
 
+    protected boolean successfulPredator;
 
-    public Panthers() {
 
+    public boolean isSuccessfulPredator() {
+        return successfulPredator;
     }
-    public Panthers(String name, int age, String character, String color, boolean successfulPredator) {
+    public void setSuccessfulPredator(boolean successfulPredator) {
+        this.successfulPredator = successfulPredator;
+    }
+    public Panthers() {
+        super();
+    }
+    public Panthers(String name, int age, String character, String color, String kind, boolean successfulPredator) {
         super();
         this.name = name;
         this.age = age;
         this.character = character;
+        this.kind = kind;
         this.color = color;
         this.successfulPredator = successfulPredator;
 

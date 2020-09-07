@@ -1,21 +1,28 @@
 package com.zoo.animal;
 
 public class Cats extends Animal {
+	protected boolean domestic;
 
-
-    public Cats() {
-
+    
+	public Cats() {
+    	 super();
     }
-    public Cats(String name, int age, String breed, String color, boolean domestic) {
-        super();
+    public Cats(String name, int age, String color, String kind,  String character, boolean domestic) {
+       
         this.name = name;
         this.age = age;
         this.color = color;
-        this.breed = breed;
+        this.kind = kind;
+        this.character = character;
         this.domestic = domestic;
     }
 
-
+    public boolean isDomestic() {
+		return domestic;
+	}
+	public void setDomestic(boolean domestic) {
+		this.domestic = domestic;
+	}
 
     public void say() {
         System.out.println("Мяу");

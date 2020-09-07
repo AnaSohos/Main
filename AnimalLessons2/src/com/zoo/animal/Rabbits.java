@@ -2,15 +2,26 @@ package com.zoo.animal;
 
 public class Rabbits extends Animal {
 
-    public Rabbits() {
-
+    public int getJumpHeight() {
+        return jumpHeight;
     }
 
-    public Rabbits(String name, int age, String character, String color, int jumpHeight) {
+    public void setJumpHeight(int jumpHeight) {
+        this.jumpHeight = jumpHeight;
+    }
+
+    protected int jumpHeight;
+
+    public Rabbits() {
+        super();
+    }
+
+    public Rabbits(String name, int age, String color, String kind, String character, int jumpHeight) {
         super();
         this.name = name;
         this.age = age;
         this.character = character;
+        this.kind = kind;
         this.color = color;
         this.jumpHeight = jumpHeight;
 

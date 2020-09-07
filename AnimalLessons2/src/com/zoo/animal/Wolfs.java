@@ -3,16 +3,17 @@ package com.zoo.animal;
 public class Wolfs extends Animal {
 
     public Wolfs() {
-
+        super();
     }
 
-    public Wolfs(String name, int age, String character, String color, boolean successfulPredator) {
-        super();
+    public Wolfs(String name, int age, String color, String kind, String character) {
+
         this.name = name;
         this.age = age;
-        this.character = character;
         this.color = color;
-        this.successfulPredator = successfulPredator;
+        this.kind = kind;
+        this.character = character;
+
 
     }
 
