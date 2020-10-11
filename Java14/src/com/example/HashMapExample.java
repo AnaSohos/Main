@@ -3,15 +3,31 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class HashMapExample {
-    public void change(HashMap < Integer, Animal > tt, Animal elem, int key) throws Exception {
-        if (tt.values() != null) {
-            tt.replace(key, elem);
-        }
-        if (tt.containsKey(key) == true) {
-            tt.replace(key, elem);
+    public void change(HashMap < Integer, Animal > tt, Animal elem, int key) throws MapException {
+
+        if (tt.containsKey(key) != true) {
+            switch (key) {
+                case 1:
+                    tt.put(key, elem);
+                    break;
+                case 2:
+                    tt.put(key, elem);
+                    break;
+                case 3:
+                    tt.put(key, elem);
+                    break;
+                case 4:
+                    tt.put(key, elem);
+                    break;
+                case 5:
+                    tt.put(key, elem);
+                    break;
+            }
 
         } else {
-            throw new Exception("Такого вольера нет");
+            throw new MapException("Такого вольера нет");
         }
+
+
     }
 }

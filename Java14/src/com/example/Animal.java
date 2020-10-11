@@ -4,8 +4,7 @@ public class Animal extends java.lang.Object {
 
     private String name;
 
-    public Animal() {
-    }
+    public Animal() {}
 
     public Animal(java.lang.String name) {
         this.name = name;
