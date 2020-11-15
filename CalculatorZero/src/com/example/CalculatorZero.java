@@ -5,45 +5,91 @@ import java.util.Scanner;
 public class CalculatorZero {
 
     public static void main(String[] args) {
-        int result = 0, rest, quotient;
-        double quotie;
+        var result = 0;
 
-        System.out.println("Введите операцию (+ - * / ^) и два целый числа");
+
+        System.out.println("Введите операцию + - * / div ^ mod!");
         Scanner scan = new Scanner(System.in);
-        char oper = scan.next().charAt(0);
-        int num1 = scan.nextInt();
-        int num2 = scan.nextInt();
+        var oper = scan.nextLine();
 
-        if (oper == '+') {
-            result = num1 + num2;
-            System.out.println(" Сумма чисел = " + result);
 
-        } else if (oper == '-') {
-            result = num1 - num2;
-            System.out.println("Разность чисел = " + result);
-        } else if (oper == '*') {
-            result = num1 * num2;
-            System.out.println("Произведение чисел = " + result);
-        } else if (oper == '^') {
-            int step = 1;
-            for (int i = 1; i <= num2; i++) {
-                step = step * num1;
-            }
-
-            if (step < 0) {
-                step *= -1;
-            }
-            System.out.println("Возведение в степень  = " + step);
-        } else if (oper == '/' && num2 != 0) {
-            quotient = num1 / num2;
-            quotie = (double) num1 / num2;
-            rest = num1 % num2;
-            System.out
-                    .println(" Дробное = " + quotie + " Частное чисел = " + quotient + " Остаток от деления = " + rest);
-
-        } else {
-            System.out.println("Ошибка!! Попробуйте еще раз!");
+        while (!oper.equals("+") && !oper.equals("-") && !oper.equals("*") && !oper.equals("/") && !oper.equals("^") && !oper.equals("mod") && !oper.equals("div")) {
+            System.out.println("Вы ввели некоректная операция, введите + - * / div ^ mod!");
+            oper = scan.nextLine();
         }
+
+        System.out.println("Введите два целый числа !");
+
+        var num1 = scan.nextInt();
+        var num2 = scan.nextInt();
+
+        switch (oper) {
+            case "+":
+                result = num1 + num2;
+                System.out.println(" Сумма чисел = " + result);
+                break;
+
+            case "-":
+                result = num1 - num2;
+                System.out.println("Разность чисел = " + result);
+                break;
+
+            case "*":
+                result = num1 * num2;
+                System.out.println("Произведение чисел = " + result);
+                break;
+
+            case "^":
+                if (num2 > 0) {
+                    var n = 1;
+                    for (var i = 1; i <= num2; i++)
+                        n = n * num1;
+                    System.out.println("Возведение в степень = " + n);
+
+
+                } else if (num2 < 0) {
+                    var n = 1;
+                    num2 *= -1;
+                    for (var i = 1; i <= num2; i++)
+                        n = n * num1;
+                    System.out.println("Возведение в степень = " + 1 / (float) n);
+
+                }
+                break;
+
+
+
+            case "/":
+                if (num2 == 0) {
+                    System.out.println("На ноль делить нельзя!");
+
+                } else {
+                    double quotie;
+                    quotie = (double) num1 / num2;
+                    System.out.println(" Результат дробного деления = " + quotie);
+                }
+                break;
+
+
+
+            case "div":
+                if (num2 == 0) {
+                    System.out.println("На ноль делить нельзя!");
+
+                } else {
+                    result = num1 / num2;
+                    System.out.println("Деление целых чисел = " + result);
+
+                }
+                break;
+
+            case "mod":
+
+                result = num1 % num2;
+                System.out.println("Остаток от деления чисел = " + result);
+                break;
+        }
+
 
     }
 }
