@@ -4,27 +4,65 @@ public class ThreadMain {
 
     public static void main(String[] args) throws InterruptedException {
 
-        DetalsRan detal = new DetalsRan("1");
-        DetalsRan detal2 = new DetalsRan("2");
-        DetalsRan detal3 = new DetalsRan("3");
-        DetalsRan detal4 = new DetalsRan("4");
-        DetalsRan detal5 = new DetalsRan("5");
-        DetalsRan detal6 = new DetalsRan("6");
-        DetalsRan detal7 = new DetalsRan("7");
-        DetalsRan detal8 = new DetalsRan("8");
-        DetalsRan detal9 = new DetalsRan("9");
-        DetalsRan detal10 = new DetalsRan("10");
-        DetalsRan detal11 = new DetalsRan("11");
-        DetalsRan detal12 = new DetalsRan("12");
-        DetalsRan detal13 = new DetalsRan("13");
-        DetalsRan detal14 = new DetalsRan("14");
-        DetalsRan detal15 = new DetalsRan("15");
-        DetalsRan detal16 = new DetalsRan("16");
-        DetalsRan detal17 = new DetalsRan("17");
-        DetalsRan detal18 = new DetalsRan("18");
-        DetalsRan detal19 = new DetalsRan("19");
-        DetalsRan detal20 = new DetalsRan("20");
+        for (int i = 1; i <= 20; i++) {
+            int elem = i;
 
+            var th = new Thread() {
+                public void run() {
+                    System.out.println(" Деталь №" + elem + " обрабатывается  потоком - 1 ");
+                }
+            };
 
+            var th2 = new Thread() {
+                public void run() {
+                    System.out.println(" Деталь №" + elem + " обрабатывается  потоком - 2 ");
+                }
+            };
+
+            final
+            var th3 = new Thread() {
+                public void run() {
+                    System.out.println(" Деталь №" + elem + " обрабатывается  потоком - 3 ");
+                }
+            };
+
+            final
+            var th4 = new Thread() {
+                public void run() {
+                    System.out.println(" Деталь №" + elem + " обрабатывается  потоком - 4 ");
+                }
+            };
+
+            final
+            var th5 = new Thread() {
+                public void run() {
+                    System.out.println(" Деталь №" + elem + " обрабатывается  потоком - 5 ");
+                }
+            };
+
+            final
+            var th6 = new Thread() {
+                public void run() {
+                    System.out.println(" Деталь №" + elem + " обрабатывается  потоком - 6 ");
+                }
+            };
+            System.out.println("1 и 2 поток обрабатывает деталь синхронно");
+            th.start();
+            th2.start();
+            th.join();
+            th2.join();
+            System.out.println("3 поток обрабатывает деталь асинхронно ");
+            th3.start();
+            th3.join();
+            System.out.println(" 4 и 5 поток обрабатывает деталь синхронно");
+            th4.start();
+            th5.start();
+            th4.join();
+            th5.join();
+            System.out.println("Включается 6 поток и обрабатывает деталь");
+            th6.start();
+
+        }
     }
+
 }
