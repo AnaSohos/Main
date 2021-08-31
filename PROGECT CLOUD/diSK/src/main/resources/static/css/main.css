@@ -1,0 +1,97 @@
+body{font-family: 'Roboto', sans-serif;}
+
+.navbar {
+    display: inline-block;}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: .10rem;
+        padding-left: .10rem;
+    }
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+.form-control{margin: 0 auto;}
+
+.btn-primary {
+
+
+    background-color: #CDA5CC;
+    border-color: #CDA5CC;}
+
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #CD83CB;
+    border-color: #CD83CB;}
+
+
+.bg-light {
+    background-color: #E3F2FD!important;}
+
+
+.form-inline .form-control{
+    overflow: hidden;
+}
+@media (min-width: 576px){
+    .form-inline .form-control {
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 2px;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+   }
+
+.form-control {
+    height: calc(2em + .75rem + 2px);
+    padding: .575rem .575rem;
+}
+.form-inline label{
+
+    margin-right: 2px;
+}
+@media (min-width: 576px){
+    .form-inline label{
+
+        margin-right: 5px;
+    }
+}
+.form-inline .form-control{
+    font-size: 0.8em;
+}
+@media (min-width: 576px){
+    .form-inline .form-control {
+        font-size: 0.8em;
+    }
+}
+.form-inline label {
+
+    font-size: 0.9em;
+}
+
+@media (min-width: 576px){
+    .form-inline label {
+
+        font-size: 0.9em;
+    }
+}
+.table-responsive {
+    display: inline;}
+
+.pagination {
+    margin-top: 30px;}
+
+.table-sm td, .table-sm th {
+    padding: .6rem;}

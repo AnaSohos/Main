@@ -1,0 +1,43 @@
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; height:126px; border-bottom: 1px solid #BE8EC1;">
+
+    <img th:src="@{/images/zai_shine.GIF}" width="320" height="118" />
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="margin: 0 auto!important; background-color:#e3f2fd !important;" >
+        <li class="nav-item active">
+            <a class="nav-link" href="/cabinet">Главная <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-item nav-link" href="/cabinet/links" th:text="#{Links}"></span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-item nav-link" href="/cabinet/files" th:text="#{Files}"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-item nav-link" href="/cabinet/resetPassword" th:text="#{Reset.Password}"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-item nav-link" href="/logout">Выйти</a>
+        </li>
+    </ul>
+
+    </div>
+    </nav>
+    <nav class="navbar navbar-light bg-light" style="margin: 0 !important;">
+        <form  class="form-inline" method="POST" 
+               th:action="@{/cabinet/uploads}"
+               enctype="multipart/form-data">
+            <label>Выберете файл для загрузки </label>
+            <input class="form-control mr-sm-2" type="file" name="files"  multiple="multiple" required="required" />
+           <button class="btn btn-light my-2 my-sm-0"  type="submit" value="Submit">Загрузить файл</button>
+        </form>
+    </nav>
+</nav>

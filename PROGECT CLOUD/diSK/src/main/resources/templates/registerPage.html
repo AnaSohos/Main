@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:utext="${title}">Регистрация</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <link th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+    <style>
+        body {
+            background:#e3f2fd;
+           /* background: linear-gradient(to right, #e3f2fd, #F8CAFA);*/
+        }
+        th, td {
+            padding: 5px;
+        }
+        td span  {
+            font-size:90%;
+            font-style: italic;
+            color: red;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center" th:text="#{Register.Info}"></h5>
+                    <div th:if="${errorMessage != null}"
+                         th:utext="${errorMessage}" class="error">...</div>
+
+                    <form th:action="@{/register}" th:object="${userForm}" method="POST">
+                        <table>
+                            <tr>
+                                <td style="widows: 1" th:text="#{Login}"></td>
+                                <td><input type="text" class="form-control"  th:field="*{login}" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <span th:if="${#fields.hasErrors('login')}" th:errors="*{login}">..</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td th:text = "#{Name}"></td>
+                                <td><input type="text" class="form-control"  th:field="*{name}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">..</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td th:text="#{Password}"</td>
+                                <td><input type="password" class="form-control"  th:field="*{password}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">..</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td th:text="#{Confirm.Password}"></td>
+                                <td><input type="password" class="form-control"  th:field="*{confirmPassword}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}">..</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" th:value="#{Save.Button}"/></td>
+                                <td>
+                                    <a class="btn btn-lg btn-primary btn-block text-uppercase" th:href="@{/login}" th:text="#{Cancel}"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</body>
+</html>

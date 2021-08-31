@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+
+        <link th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+
+    </head>
+
+    <body>
+       <th:block th:include="/admin/_menu"></th:block>  
+        <div class=" d-flex flex-row justify-content-center align-items-center" >
+
+            <div class="container">
+                <h2>Пользователи</h2>
+                <table  class="table">
+                  <thead class="thead-light">
+                        <tr>
+                            <th> Логин </th>
+                            <th> Имя </th>
+                            <th> Роль </th>
+                            <th> Активный </th>
+                            <th> Сбросить пароль</th>
+                            <th> Активировать/деактивировать</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${users.empty}">
+                            <td colspan="2"> No User Available </td>
+                        </tr>
+                        <tr th:each="user : ${users}">
+                            <td><span th:text="${user.login}"> </span>
+                                </td>
+                            <td><span th:text="${user.name}"> </span></td>
+                            <td><span th:text="${user.role.name}"> </span></td>
+                            <td><input type="checkbox" name="mycheckbox"  disabled="disabled" th:checked="${user.isenabled} ? 'checked'"/>
+                             </td>
+                        <td> 
+                            <a class="btn btn-outline-primary" th:href="@{'/admin/resetPassword'(login=${user.login})}"><span>Reset password</span></a>
+                        </td>
+                        <td> 
+                            <a class="btn btn-outline-primary" th:href="@{'/admin/status'(login=${user.login})}"><span>Active/Deactivate</span></a>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+               <button type="button"  onclick="location.href='/admin/register'"  class="btn btn-outline-primary">Добавить нового</button>
+            </div>
+        </div>
+       <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    </body>
+
+</html>

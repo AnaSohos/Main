@@ -1,0 +1,65 @@
+<script>
+    $(function() {
+        var bar = $('.bar');
+        var percent = $('.percent');
+        var status = $('#status');
+
+        $('#uploadForm').ajaxForm({
+            beforeSend: function() {
+                status.empty();
+                var percentVal = '0%';
+                bar.width(percentVal);
+                percent.html(percentVal);
+            },
+            uploadProgress: function(event, position, total, percentComplete) {
+                var percentVal = percentComplete + '%';
+                bar.width(percentVal);
+                percent.html(percentVal);
+            },
+            complete: function(xhr) {
+                //status.html(xhr.responseText);
+                status.html('Загружено!');
+
+            }
+        });
+    });
+</script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/cabinet">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/cabinet/links" th:text="#{Links}"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/cabinet/files" th:text="#{Files}"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/cabinet/resetPassword" th:text="#{Reset.Password}"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/logout">Выйти</a>
+            </li>
+        </ul>
+
+    </div>
+    <nav class="navbar navbar-light bg-light" style="width: 100%">
+        <div class="progress">
+            <div class="bar"></div >
+            <div class="percent">0%</div >
+        </div>
+        <div id="status"></div>
+        <form id="uploadForm" class="form-inline" method="POST"
+              th:action="@{/cabinet/uploads}"
+              enctype="multipart/form-data">
+            <label>Выберете файл для загрузки </label>
+            <input class="form-control mr-sm-2" type="file" name="files"  multiple="multiple" required="required" />
+            <button class="btn btn-outline-success my-2 my-sm-0"  type="submit" value="Submit">Загрузить файл</button>
+        </form>
+    </nav>
+</nav>
